@@ -3,20 +3,21 @@
 Задача 41:
 Пользователь вводит с клавиатуры M чисел.
 Посчитайте, сколько чисел больше 0 ввёл пользователь.
-
+0, 7, 8, -2, -2 -> 2
+-1, -7, 567, 89, 223-> 3
 */
-int sum = 0;
-int m = new Random().Next(4,6);
+int counter = 0;
+int m = new Random().Next(5,6);
 int size = m;
 int[] array = new int[m];
 Console.WriteLine($"Введите следующее количество чисел: {m}");
 for (int i = 0; i < size; i++)
 {
-    Console.Write($"Введите число: ");
+    Console.Write($"Введите число {i+1}: ");
     array[i] = Convert.ToInt32(Console.ReadLine());
     if (array[i] > 0)
     {
-        sum += array[i];
+        counter++;
     }
 }
-Console.WriteLine($"Сумма положительных чисел = {sum}");
+Console.WriteLine($"Количество положительных чисел: {counter}");
